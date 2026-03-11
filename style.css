@@ -1,0 +1,264 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#0f172a;
+color:white;
+line-height:1.6;
+}
+
+/* ── PAGE FADE-IN ───────────────────────────────── */
+
+body{
+opacity:0;
+transition:opacity 0.5s ease;
+}
+
+body.fade-in{
+opacity:1;
+}
+
+/* ── SCROLL REVEAL ──────────────────────────────── */
+
+.reveal{
+opacity:0;
+transform:translateY(40px);
+transition:opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+
+/* ── NAVBAR ─────────────────────────────────────── */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:#020617;
+position:sticky;
+top:0;
+z-index:100;
+}
+
+nav h2{
+color:#38bdf8;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+}
+
+nav ul li{
+margin-left:25px;
+}
+
+nav ul li a{
+text-decoration:none;
+color:white;
+font-weight:bold;
+transition:color 0.2s;
+}
+
+nav ul li a:hover{
+color:#38bdf8;
+}
+
+/* Hamburger button — hidden on desktop */
+
+.hamburger{
+display:none;
+flex-direction:column;
+gap:5px;
+cursor:pointer;
+background:none;
+border:none;
+padding:4px;
+}
+
+.hamburger span{
+display:block;
+width:24px;
+height:2px;
+background:white;
+border-radius:2px;
+transition:transform 0.3s, opacity 0.3s;
+}
+
+.hamburger.open span:nth-child(1){
+transform:translateY(7px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2){
+opacity:0;
+}
+
+.hamburger.open span:nth-child(3){
+transform:translateY(-7px) rotate(-45deg);
+}
+
+/* ── SECTION ────────────────────────────────────── */
+
+section{
+padding:80px 10%;
+}
+
+h1,h2{
+color:#38bdf8;
+margin-bottom:20px;
+}
+
+/* ── CARDS ──────────────────────────────────────── */
+
+.card{
+background:#1e293b;
+padding:25px;
+border-radius:10px;
+margin-top:20px;
+}
+
+/* ── TESTIMONIAL IMAGES ─────────────────────────── */
+
+.testimonial-container{
+display:flex;
+flex-wrap:wrap;
+gap:20px;
+justify-content:center;
+}
+
+.testimonial-container img{
+width:300px;
+max-width:100%;
+border-radius:10px;
+}
+
+/* ── CONTACT FORM ───────────────────────────────── */
+
+form{
+max-width:400px;
+width:100%;
+display:flex;
+flex-direction:column;
+gap:12px;
+}
+
+input,textarea{
+padding:10px;
+border:none;
+border-radius:5px;
+width:100%;
+}
+
+button{
+padding:10px;
+background:#38bdf8;
+border:none;
+font-weight:bold;
+cursor:pointer;
+border-radius:5px;
+}
+
+/* ── FOOTER ─────────────────────────────────────── */
+
+footer{
+background:#020617;
+text-align:center;
+padding:25px;
+}
+
+/* ── HERO IMAGE ─────────────────────────────────── */
+
+.hero-img{
+display:block;
+max-width:250px;
+width:100%;
+border-radius:12px;
+margin-top:24px;
+}
+
+/* ════════════════════════════════════════════════
+   RESPONSIVE WEB DESIGN  —  media queries
+   ════════════════════════════════════════════════ */
+
+/* Tablet — ≤ 768px */
+@media (max-width: 768px) {
+
+  /* Show hamburger, hide links by default */
+  .hamburger{
+    display:flex;
+  }
+
+  nav ul{
+    display:none;
+    flex-direction:column;
+    position:absolute;
+    top:65px;
+    left:0;
+    width:100%;
+    background:#020617;
+    padding:20px 8%;
+    gap:16px;
+    z-index:99;
+  }
+
+  nav ul.open{
+    display:flex;
+  }
+
+  nav ul li{
+    margin-left:0;
+  }
+
+  section{
+    padding:50px 6%;
+  }
+
+  .testimonial-container img{
+    width:100%;
+  }
+
+  form{
+    max-width:100%;
+  }
+
+  .hero-img{
+    max-width:200px;
+  }
+}
+
+/* Mobile — ≤ 480px */
+@media (max-width: 480px) {
+
+  nav{
+    padding:16px 5%;
+  }
+
+  section{
+    padding:36px 5%;
+  }
+
+  h1{
+    font-size:1.6rem;
+  }
+
+  h2{
+    font-size:1.3rem;
+  }
+
+  .card{
+    padding:18px;
+  }
+
+  footer{
+    padding:20px 5%;
+    font-size:0.9rem;
+  }
+}
